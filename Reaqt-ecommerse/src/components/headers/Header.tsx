@@ -1,19 +1,22 @@
- import logo from "../../assets/logo.png"
+
+import logo from "../../assets/logo.png"
+
+import "../../appstyle.css"
+import AppModeThema from "./AppModeThema"
+import HeaderNav from "./HeaderNav"
 
 const Header = () => {
+
+
+  
   return (
-    <header className="fex w-[1400px] p-55">
+    <header >
         <div>
             <img src={logo} alt="header Logo" />
         </div>
-
-
-        <nav>
-
-        </nav>
-
+   <HeaderNav/>
         <div>
-
+     < AppModeThema/>
 
         </div>
     </header>
