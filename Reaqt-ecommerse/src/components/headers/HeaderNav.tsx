@@ -9,6 +9,7 @@ const HeaderNav = () => {
     const navigantion:navType[] = [
     {url:"/", name: "home"},
     {url:"/category", name:"category"},
+    {url:"/Contact", name:"Contact"},
 
 
     ]
@@ -17,10 +18,12 @@ const HeaderNav = () => {
     <nav>
         {navigantion.map(el => 
            
-                <NavLink key={el.url} to={el.url}>
-                    {el.name}
+    <NavLink key={el.url} to={el.url} className="category-link">
+           {el.name}
+    </NavLink>
 
-                </NavLink>
+
+
         ) }
     </nav>
     

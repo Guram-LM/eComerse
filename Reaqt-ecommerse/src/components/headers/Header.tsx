@@ -4,20 +4,23 @@ import logo from "../../assets/logo.png"
 import "../../appstyle.css"
 import AppModeThema from "./AppModeThema"
 import HeaderNav from "./HeaderNav"
-import { Link } from "react-router-dom"
+import UserMenu from "./UserMenu"
+import { useState } from "react"
 
 const Header = () => {
 
 
-  
+  const [userIsValid, setuserIsValid]=useState(false)
+
+
   return (
     <header >
         <div>
           <img src={logo} alt="header Logo" />
         </div>
           <HeaderNav/>
-        <div>
-          <Link to={"/register"}>Register</Link>
+        <div className="heaserSection3">
+          <UserMenu userIsValid = {userIsValid}/>
           <AppModeThema/>
 
         </div>

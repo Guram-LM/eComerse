@@ -1,6 +1,7 @@
 import type { InputeType } from "../interface";
 
 export const RegistrationInpute: InputeType[] = [
+    {type: "text", name: "image", id: "image", label: "Image", placeholder:"your image"},
     {type: "text", name: "name", id: "name", label: "Name", placeholder:"your name"},
     {type: "text", name: "lastName", id: "lastName", label: "LastName", placeholder:"your lastName"},
     {type: "phone", name: "phone", id: "phone", label: "Phone", placeholder:"your phone"},
@@ -11,3 +12,4 @@ export const RegistrationInpute: InputeType[] = [
     {type: "password", name: "password", id: "password", label: "Password", placeholder:"your password"},
     {type: "password", name: "confirmPassword", id: "confirmPassword", label: "Confirm Password", placeholder:"confirm Password"},
 ]
+
