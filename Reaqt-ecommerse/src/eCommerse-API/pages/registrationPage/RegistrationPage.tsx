@@ -1,11 +1,14 @@
 import React, { useMemo } from 'react'
 import Form from '../../../components/Form/Form'
 import { RegistrationInpute } from '../../../components/inpute/registrationInpute/RegistrationInpute'
+import useUserMutation from '../../../hook/mutationHook/useUserMutation'
+import type { userdataType } from '../../../components/inpute/interface'
 
 const RegistrationPage = () => {
-
-    const sendData = (data:Record<string, string>) => {
-        console.log(data)
+    const {mutate} = useUserMutation("icommersUserApp")
+    
+    const sendData = (data:userdataType) => {
+        mutate(data)
     }
 
     const regButton = useMemo(() => {

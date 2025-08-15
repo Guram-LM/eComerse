@@ -10,18 +10,14 @@ const Slider:React.FC<SliderProp> = ({images, interval = 2000}) => {
     const [index, setIndex] = useState(0)
 
     useEffect(() => {
-        
         const SliderInt = setInterval(() => {
-
             setIndex(prev => (
                 prev === images.length - 1 ? 0 : prev + 1
             ))
-
         }, interval)
 
         return () => clearInterval(SliderInt)
-
-    }, [index, images.length])
+    }, [index, images.length, interval])
 
 
     const left = () => {
@@ -30,21 +26,19 @@ const Slider:React.FC<SliderProp> = ({images, interval = 2000}) => {
         ))
     }
 
-
     const right = () => {
         setIndex(prev => (
             prev === images.length - 1 ? 0 : prev + 1
         ))
     }
 
-
-  return (
-    <div>
-        <button onClick={left}>-</button>
-        <img src={images[index]} alt="" />
-        <button onClick={right}>+</button>
-    </div>
-  )
+    return (
+        <div className="slider-container">
+            <button className="arrow prev" onClick={left}>◀</button>
+            <img className="slider-image" src={images[index]} alt={`Slide ${index}`} />
+            <button className="arrow next" onClick={right}>▶</button>
+        </div>
+    )
 }
 
 export default Slider

@@ -44,14 +44,22 @@ nav {
 
 nav a {
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bolder;
   padding: 6px 12px;
   border-radius: 6px;
   transition: background-color 0.2s ease;
   font-size: 25px;
-  color: greenyellow;
+
+
 }
 
+body.dark nav a {
+  color:#8db9ee
+}
+
+body.light nav a {
+  color:#204580
+}
 
 
 body.dark nav a:hover {
@@ -216,7 +224,7 @@ button:hover {
 }
 
 .brand {
-  color: #64748b;
+ 
   font-size: 13px;
   margin-top: 2px;
 }
@@ -272,9 +280,404 @@ button:hover {
   color: #475569;
 }
 
+.details-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
 
 
 
 
+.description {
+  font-size: 1rem;
+  line-height: 2rem;
+}
 
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff4d4f;
+}
+
+.discount {
+  color: green;
+  font-weight: bold;
+}
+
+.rating {
+  font-size: 1.1rem;
+}
+
+
+
+.buy-btn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background: #d9363e;
+}
+
+/* ძირითადი სტილები */
+.slider-container {
+    position: relative;
+    width: 100%;
+    width: 670px;
+    margin: auto;
+}
+
+.slider-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ისრები */
+.arrow {
+    position: absolute;
+    top: 180px;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: inherit; /* მიიღებს body-ს ფერს */
+}
+
+.arrow:hover {
+    transform: scale(1.2);
+}
+
+.arrow.prev {
+    left: 10px;
+}
+
+.arrow.next {
+    right: 10px;
+}
+
+/* თემის მხარდაჭერა */
+body.light {
+    background-color: white;
+    color: rgb(58, 57, 57);
+}
+
+body.dark {
+    background-color: rgb(58, 57, 57);
+    color: white;
+}
+
+
+/* UserMenu.css */
+.user-menu {
+  position: relative;
+  display: inline-block;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* avatar */
+.user-avatar {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 999px;
+  cursor: pointer;
+  display: block;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+  border: 2px solid rgba(255,255,255,0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  background-color: white;
+}
+.user-avatar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.18);
+}
+
+/* dropdown */
+.user-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 190px;
+  background: var(--menu-bg, #ffffff);
+  color: var(--menu-text, #0b1220);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 14px 40px rgba(2,6,23,0.12);
+  border: 1px solid rgba(15,23,42,0.06);
+  z-index: 60;
+  animation: pop 160ms cubic-bezier(.22,.9,.3,1);
+}
+
+/* small entry animation */
+@keyframes pop {
+  from { opacity: 0; transform: translateY(-6px) scale(.99); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* menu items */
+.menu-item {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 120ms ease, color 120ms ease;
+  background: transparent;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: rgba(14,165,233,0.08);
+  color: var(--accent, #0369a1);
+}
+
+/* danger logout style */
+.menu-item.danger {
+  color: #ef4444;
+}
+
+/* divider if needed */
+/* .menu-divider { height: 1px; background: rgba(2,6,23,0.04); margin: 8px 0; } */
+
+/* dark mode support — inherit values from body class */
+body.light {
+  --menu-bg: #ffffff;
+  --menu-text: #0b1220;
+  --accent: #0369a1;
+}
+
+body.dark {
+  --menu-bg: #0f1724;
+  --menu-text: #e6eef8;
+  --accent: #60a5fa;
+}
+
+
+.heaserSection3{
+ display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: flex-end;
+
+}
+
+.custom-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: var(--form-bg, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 14px;
+    
+}
+
+.form-input {
+    margin-top: 6px;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+
+
+/* Dark mode support */
+body.dark .custom-form {
+    background-color: #1e293b;
+    color: #e2e8f0;
+}
+body.light .custom-form {
+    background-color: #1e293b;
+    color: #e2e8f0;
+}
+
+body.dark .form-input {
+    background-color:white;
+  
+    border-color: #475569;
+}
+
+body.light .form-input {
+    background-color: #334155;
+    color: #e2e8f0;
+    border-color: #475569;
+}
+body.dark .form-input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.3);
+}
+
+
+.form-button {
+    display: flex;
+    justify-content: flex-end; /* მარჯვნივ */
+    margin-top: 16px;
+    gap: 12px; /* თუ რამდენიმე button არის */
+}
+
+.form-button button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #3b82f6; /* ლურჯი */
+    color: white;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.form-button button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+body.dark .form-button button {
+    background-color: #60a5fa;
+    color: #1e293b;
+}
+
+body.dark .form-button button:hover {
+    background-color: #3b82f6;
+}
+.v-form {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 35px;
+  background: #fafafa;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.v-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.v-input-group label {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #222;
+}
+
+.v-input {
+  padding: 14px 18px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.v-input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 6px rgba(26, 115, 232, 0.4);
+}
+
+.v-password-group {
+  position: relative;
+}
+
+.v-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.v-eye-icon {
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+  transition: 0.3s;
+}
+
+.v-eye-icon:hover {
+  color: #1a73e8;
+}
+
+.v-submit-btn {
+  padding: 14px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.v-submit-btn:hover {
+  background: #135abf;
+}
 

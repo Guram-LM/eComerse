@@ -24,6 +24,7 @@ import Motorcycle from "../eCommerse-API/pages/motorcycle/Motorcycle"
 import Lighting from "../eCommerse-API/pages/lighting/Lighting"
 import DatailsPage from "../eCommerse-API/pages/datails/DatailsPage"
 import RegistrationPage from "../eCommerse-API/pages/registrationPage/RegistrationPage"
+import Vaidatsion from "../eCommerse-API/pages/validation/vaidatsion"
 
 
 const ApiNav = () => {
@@ -34,6 +35,7 @@ const ApiNav = () => {
             <Route index element={<HomePage/>} />
             <Route path="datails/:id" element={<DatailsPage/>} />
             <Route path="register" element={<RegistrationPage/>} />
+            <Route path="Vaidatsion" element={<Vaidatsion/>}/>
         
         </Route>
 
